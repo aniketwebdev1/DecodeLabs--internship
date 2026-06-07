@@ -38,4 +38,4 @@
 
 ---
 
-*DecodeLabs Industrial Training | Batch 2026*
+*DecodeLabs Industrial Training | Batch 2026* Batch: May 25, 2026 — June 25, 2026

@@ -1,0 +1,75 @@
+import java.util.Scanner;
+
+public class StudentGradeCalculator {
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+        
+        // ---- INPUT PHASE ----
+        System.out.print("Enter student name: ");
+        String name = sc.nextLine();
+        
+        System.out.print("Enter number of subjects: ");
+        int numSubjects = Integer.parseInt(sc.nextLine());
+        
+        int totalMarks = 0;
+        
+        // ---- PROCESS PHASE - Accumulator Loop ----
+        for (int i = 1; i <= numSubjects; i++) {
+            int marks = -1;
+            
+            // Input validation (Edge case handling)
+            while (marks < 0 || marks > 100) {
+                System.out.print("Enter marks for Subject " + i + " (0-100): ");
+                marks = Integer.parseInt(sc.nextLine());
+                
+                if (marks < 0 || marks > 100) {
+                    System.out.println("Invalid! Marks must be between 0 and 100.");
+                }
+            }
+            totalMarks += marks;
+        }
+        
+        // Type casting to avoid truncation trap
+        double average = (double) totalMarks / numSubjects;
+        
+        // ---- Grade Logic Ladder ----
+        String grade;
+        String result;
+        
+        if (average >= 90) {
+            grade = "A+";
+        } else if (average >= 80) {
+            grade = "A";
+        } else if (average >= 70) {
+            grade = "B";
+        } else if (average >= 60) {
+            grade = "C";
+        } else if (average >= 50) {
+            grade = "D";
+        } else {
+            grade = "F";
+        }
+        
+        // Pass/Fail check
+        if (average >= 50) {
+            result = "PASS";
+        } else {
+            result = "FAIL";
+        }
+        
+        // ---- OUTPUT PHASE ----
+        System.out.println("\n=============================");
+        System.out.println("      STUDENT REPORT CARD    ");
+        System.out.println("=============================");
+        System.out.println("Student Name  : " + name);
+        System.out.println("Total Subjects: " + numSubjects);
+        System.out.println("Total Marks   : " + totalMarks + " / " + (numSubjects * 100));
+        System.out.printf("Average       : %.2f%%%n", average);
+        System.out.println("Grade         : " + grade);
+        System.out.println("Result        : " + result);
+        System.out.println("=============================");
+        
+        sc.close();
+    }
+}

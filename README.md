@@ -24,6 +24,12 @@
 - Total, Average, Grade aur Pass/Fail calculate karta hai
 - Concepts: Scanner, Loops, Type Casting, if-else
 
+### ✅ Task 3 — ATM Interface
+- PIN authentication with 3 attempts
+- Deposit, Withdraw, Balance Check features
+- Insufficient funds & invalid input validation
+- Concepts: OOP, Classes, Encapsulation, Methods
+
 ---
 
 ## 🛠️ Tech Stack
